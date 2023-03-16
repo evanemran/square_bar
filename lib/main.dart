@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: const Center(
-        child: SquareBar(title: 'Loading', size: 80, duration: Duration(milliseconds: 700),),
+        child: SquareBar(title: 'Loading', size: 180, duration: Duration(milliseconds: 700),),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

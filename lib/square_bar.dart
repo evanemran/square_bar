@@ -25,6 +25,8 @@ class _SquareBarState extends State<SquareBar> {
     // AppColors.g5,
   ];
 
+  int it = 0;
+
   Timer? timer;
 
   @override
@@ -32,6 +34,45 @@ class _SquareBarState extends State<SquareBar> {
     super.initState();
     timer = Timer.periodic(widget.duration, (Timer t) => setState(() {
 
+      switch (it) {
+        case 0:
+          it = 1;
+          break;
+
+        case 1:
+          it = 2;
+          break;
+
+        case 2:
+          it = 5;
+          break;
+
+        case 5:
+          it = 8;
+          break;
+
+        case 8:
+          it = 7;
+          break;
+
+        case 7:
+          it = 6;
+          break;
+
+        case 6:
+          it = 3;
+          break;
+
+        case 3:
+          it = 0;
+      }
+
+      /*if(it<8){
+        it++;
+      }
+      else {
+        it = 0;
+      }*/
     }));
   }
 
@@ -64,7 +105,7 @@ class _SquareBarState extends State<SquareBar> {
         shrinkWrap: true,
         children: List.generate(9, (index) {
           return AnimatedContainer(
-            color: colors[random.nextInt(colors.length)], duration: widget.duration,
+            color: index==it ? AppColors.g6 : colors[random.nextInt(colors.length)], duration: widget.duration,
           );
         }),),
     );
